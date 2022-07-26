@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vue</title>
+    <script src="./vue.js"></script>
+  </head>
+  <body>
+    <div id="app">
+      <h3>模板编译效果</h3>
+      <p>123{{msg + '--something--'}}123</p>
+      <h3>msg:</h3>
+      <p v-text="msg"></p>
+      <h3>input:</h3>
+      <input type="text" v-model="msg" />
+      <button @click="handleClick">GetInConsole</button>
+    </div>
+
+    <script>
+      const app = new Vue({
+        el: '#app',
+        data: {
+          msg: 'abc',
+          info: 'information',
+        },
+        methods: {
+          handleClick: function () {
+            console.log('handleClick', this.msg);
+          },
+        },
+      });
+    </script>
+  </body>
+</html>
